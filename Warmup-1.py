@@ -295,6 +295,37 @@ def pos_neg(a, b, negative):
   else:
     return ((a < 0 and b > 0) or (a > 0 and b < 0))
 
+""" LEARNING WITH MISTAKES 
+WRONG 
+def pos_neg(a, b, negative):
+  if ((negative == True) and (a <0 and b < 0)):
+    return True
+  elif (a>0 and b<0):
+    return True
+  elif (a<0 and b>0):
+    return True
+  else:
+    return False
+
+pos_neg(-4, 5, True) → False	True	X	
+pos_neg(1, -1, True) → False	True	X	
+pos_neg(-1, 1, True) → False	True	X
+pos_neg(-5, 6, True) → False	True	X
+
+HOW TO CORRECT
+
+def pos_neg(a, b, negative):
+  if ((negative == True) and (a <0 and b < 0)):
+    return True
+  elif (a>0 and b<0) and negative == False:
+    return True
+  elif (a<0 and b>0) and negative == False:
+    return True
+  else:
+    return False
+"""
+
+
 """Expected	Run		
 pos_neg(1, -1, False) → True	True	OK	
 pos_neg(-1, 1, False) → True	True	OK	
