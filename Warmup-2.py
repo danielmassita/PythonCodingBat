@@ -145,3 +145,15 @@ string_bits('hxaxpxpxy') → 'happy'	'happy'	OK
 
 All Correct
  """
+
+ 
+"""
+Warmup-2 > string_splosion
+prev  |  next  |  chance
+Given a non-empty string like "Code" return a string like "CCoCodCode".
+
+
+string_splosion('Code') → 'CCoCodCode'
+string_splosion('abc') → 'aababc'
+string_splosion('ab') → 'aab'
+"""
