@@ -157,3 +157,13 @@ string_splosion('Code') → 'CCoCodCode'
 string_splosion('abc') → 'aababc'
 string_splosion('ab') → 'aab'
 """
+
+"""
+str[0]
+str[0:1]
+str[0:2]
+[str[0:3]
+...
+str[:i]
+"""
+
