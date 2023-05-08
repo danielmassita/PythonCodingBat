@@ -199,3 +199,73 @@ string_splosion('Bad') → 'BBaBad'	'BBaBad'	OK
 All Correct
 """
 
+"""
+Warmup-2 > last2
+prev  |  next  |  chance
+Given a string, return the count of the number of times that a substring length 2 appears in the string and also as the last 2 chars of the string, so "hixxxhi" yields 1 (we won't count the end substring).
+
+
+last2('hixxhi') → 1
+last2('xaxxaxaxx') → 1
+last2('axxxaaxx') → 2
+"""
+# Aqui veio do Amigo... 
+
+def last2(str):
+    if len(str) < 2:
+        return 0
+    
+    last2 = str[-2:]
+    count = 0
+    
+    for i in range(len(str) - 2):
+        if str[i:i+2] == last2:
+            count += 1
+    
+    return count
+   
+ # Aqui veio do meu antigo exercício...
+ def last2(str):
+  postFix = str[-2:0] # 'hixxaaxx[hi]' > [hi] == last2 > if loop 'ch' == [hi] > count++ 
+  count = 0
+  
+  for ch in str:
+    if ch == postFix:
+      count += 1
+  return count
+    
+# Solution:
+def last2(str):
+  # Screen out too-short string case.
+  if len(str) < 2:
+    return 0
+  # last 2 chars, can be written as str[-2:]
+  last2 = str[len(str)-2:]
+  count = 0
+  
+  # Check each substring length 2 starting at i
+  for i in range(len(str)-2):
+    sub = str[i:i+2]
+    if sub == last2:
+      count = count + 1
+
+  return count
+ 
+ """
+ Expected	Run		
+last2('hixxhi') → 1	1	OK	
+last2('xaxxaxaxx') → 1	1	OK	
+last2('axxxaaxx') → 2	2	OK	
+last2('xxaxxaxxaxx') → 3	3	OK	
+last2('xaxaxaxx') → 0	0	OK	
+last2('xxxx') → 2	2	OK	
+last2('13121312') → 1	1	OK	
+last2('11212') → 1	1	OK	
+last2('13121311') → 0	0	OK	
+last2('1717171') → 2	2	OK	
+last2('hi') → 0	0	OK	
+last2('h') → 0	0	OK	
+last2('') → 0	0	OK	
+
+All Correct
+ """
