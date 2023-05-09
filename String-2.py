@@ -4,5 +4,15 @@ Medium python string problems -- 1 loop.. Use + to combine strings, len(str) is 
 
 double_char H	        count_hi H      	  cat_dog
 count_code        	  end_other H     	  xyz_there
+"""
 
+"""
+String-2 > double_char
+prev  |  next  |  chance
+Given a string, return a string where for every char in the original, there are two chars.
+
+
+double_char('The') → 'TThhee'
+double_char('AAbb') → 'AAAAbbbb'
+double_char('Hi-There') → 'HHii--TThheerree'
 """
