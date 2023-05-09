@@ -15,4 +15,37 @@ Given a string, return a string where for every char in the original, there are 
 double_char('The') → 'TThhee'
 double_char('AAbb') → 'AAAAbbbb'
 double_char('Hi-There') → 'HHii--TThheerree'
+
+Hint:
+In Python, the loop "for i in range(len(str)):" loops i through each index in the string, 0, 1, 2, .. len-1.
+"""
+def double_char(str):
+  word = ''
+  for char in str:
+    word += char * 2 
+  return word
+
+# Our Solution:
+
+def double_char(str):
+  result = ""
+  for i in range(len(str)):
+    result += str[i] + str[i]
+  return result
+"""
+Expected	Run		
+double_char('The') → 'TThhee'	'TThhee'	OK	
+double_char('AAbb') → 'AAAAbbbb'	'AAAAbbbb'	OK	
+double_char('Hi-There') → 'HHii--TThheerree'	'HHii--TThheerree'	OK	
+double_char('Word!') → 'WWoorrdd!!'	'WWoorrdd!!'	OK	
+double_char('!!') → '!!!!'	'!!!!'	OK	
+double_char('') → ''	''	OK	
+double_char('a') → 'aa'	'aa'	OK	
+double_char('.') → '..'	'..'	OK	
+double_char('aa') → 'aaaa'	'aaaa'	OK	
+other tests
+OK	
+
+All Correct
+Good job -- problem solved. You can see our solution as an alternative.
 """
