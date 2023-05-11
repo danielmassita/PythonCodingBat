@@ -62,3 +62,39 @@ count_hi('hihi') → 2
 Hint:
 Use the "for i in range(len(str)-1):" loop to look at each index in the string, except the last. For each i, extract the string starting at i and up to but not including i+2. Check if that string is 'hi', and count how many times that happens.
 """
+def count_hi(str):
+  count = 0
+  tamanho = len(str) # tamanho será uma INT
+  
+  for i in range(tamanho-1): # o i vai iterar pelo range INT tamanho-1 (pois começa em zero)
+    if str[i:i+2] == 'hi':
+      count += 1
+  return count
+  
+Our Solution:
+
+def count_hi(str):
+  sum = 0
+  ## Loop to length-1 and access index i and i+1
+  ## in the loop.
+  for i in range(len(str)-1):
+    if str[i:i+2] == 'hi':
+      sum = sum + 1
+  return sum
+"""
+Expected	Run		
+count_hi('abc hi ho') → 1	1	OK	
+count_hi('ABChi hi') → 2	2	OK	
+count_hi('hihi') → 2	2	OK	
+count_hi('hiHIhi') → 2	2	OK	
+count_hi('') → 0	0	OK	
+count_hi('h') → 0	0	OK	
+count_hi('hi') → 1	1	OK	
+count_hi('Hi is no HI on ahI') → 0	0	OK	
+count_hi('hiho not HOHIhi') → 2	2	OK	
+other tests
+OK	
+
+All Correct
+Good job -- problem solved. You can see our solution as an alternative. 
+"""
