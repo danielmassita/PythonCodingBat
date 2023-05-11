@@ -109,3 +109,35 @@ cat_dog('catdog') → True
 cat_dog('catcat') → False
 cat_dog('1cat1cadodog') → True
 """
+def cat_dog(string):
+    count_cat = 0
+    count_dog = 0
+
+    for i in range(len(string) - 2):
+        if string[i:i+3] == 'cat':
+            count_cat += 1
+        elif string[i:i+3] == 'dog':
+            count_dog += 1
+
+    return count_cat == count_dog
+  
+"""
+Expected	Run		
+cat_dog('catdog') → True	True	OK	
+cat_dog('catcat') → False	False	OK	
+cat_dog('1cat1cadodog') → True	True	OK	
+cat_dog('catxxdogxxxdog') → False	False	OK	
+cat_dog('catxdogxdogxcat') → True	True	OK	
+cat_dog('catxdogxdogxca') → False	False	OK	
+cat_dog('dogdogcat') → False	False	OK	
+cat_dog('dogogcat') → True	True	OK	
+cat_dog('dog') → False	False	OK	
+cat_dog('cat') → False	False	OK	
+cat_dog('ca') → True	True	OK	
+cat_dog('c') → True	True	OK	
+cat_dog('') → True	True	OK	
+other tests
+OK	
+
+All Correct
+"""
