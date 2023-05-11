@@ -182,3 +182,50 @@ OK
 All Correct
 """
   
+"""
+String-2 > end_other
+prev  |  next  |  chance
+Given two strings, return True if either of the strings appears at the very end of the other string, ignoring upper/lower case differences (in other words, the computation should not be "case sensitive"). Note: s.lower() returns the lowercase version of a string.
+
+
+end_other('Hiabc', 'abc') → True
+end_other('AbC', 'HiaBc') → True
+end_other('abc', 'abXabc') → True
+Hint:
+In Python s1.endswith(s2) tests if string s1 ends with string s2 -- makes this much easier!
+"""
+def end_other(a, b):
+    a = a.lower()
+    b = b.lower()
+
+    return a.endswith(b) or b.endswith(a)
+  
+# Our Solution:
+
+def end_other(a, b):
+  a = a.lower()
+  b = b.lower()
+  return (b.endswith(a) or a.endswith(b))
+
+"""
+Expected	Run		
+end_other('Hiabc', 'abc') → True	True	OK	
+end_other('AbC', 'HiaBc') → True	True	OK	
+end_other('abc', 'abXabc') → True	True	OK	
+end_other('Hiabc', 'abcd') → False	False	OK	
+end_other('Hiabc', 'bc') → True	True	OK	
+end_other('Hiabcx', 'bc') → False	False	OK	
+end_other('abc', 'abc') → True	True	OK	
+end_other('xyz', '12xyz') → True	True	OK	
+end_other('yz', '12xz') → False	False	OK	
+end_other('Z', '12xz') → True	True	OK	
+end_other('12', '12') → True	True	OK	
+end_other('abcXYZ', 'abcDEF') → False	False	OK	
+end_other('ab', 'ab12') → False	False	OK	
+end_other('ab', '12ab') → True	True	OK	
+other tests
+OK	
+
+All Correct
+Good job -- problem solved. You can see our solution as an alternative.
+"""
