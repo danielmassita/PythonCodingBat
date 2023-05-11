@@ -229,3 +229,44 @@ OK
 All Correct
 Good job -- problem solved. You can see our solution as an alternative.
 """
+
+"""
+String-2 > xyz_there
+prev  |  next  |  chance
+Return True if the given string contains an appearance of "xyz" where the xyz is not directly preceeded by a period (.). So "xxyz" counts but "x.xyz" does not.
+
+
+xyz_there('abcxyz') → True
+xyz_there('abc.xyz') → False
+xyz_there('xyz.abc') → True
+"""
+def xyz_there(str):
+    for i in range(len(str) - 2):
+        if str[i:i+3] == "xyz":  # Verifica se encontrou o grupo "xyz"
+            if i == 0:  # Se for o início da string, retorna True
+                return True
+            elif str[i-1] != ".":  # Se o caractere anterior não for um ponto, retorna True
+                return True
+    return False  # Caso não encontre nenhuma ocorrência, retorna False
+  
+"""
+Expected	Run		
+xyz_there('abcxyz') → True	True	OK	
+xyz_there('abc.xyz') → False	False	OK	
+xyz_there('xyz.abc') → True	True	OK	
+xyz_there('abcxy') → False	False	OK	
+xyz_there('xyz') → True	True	OK	
+xyz_there('xy') → False	False	OK	
+xyz_there('x') → False	False	OK	
+xyz_there('') → False	False	OK	
+xyz_there('abc.xyzxyz') → True	True	OK	
+xyz_there('abc.xxyz') → True	True	OK	
+xyz_there('.xyz') → False	False	OK	
+xyz_there('12.xyz') → False	False	OK	
+xyz_there('12xyz') → True	True	OK	
+xyz_there('1.xyz.xyz2.xyz') → False	False	OK	
+other tests
+OK	
+
+All Correct
+"""
