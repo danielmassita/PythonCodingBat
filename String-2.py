@@ -49,3 +49,16 @@ OK
 All Correct
 Good job -- problem solved. You can see our solution as an alternative.
 """
+
+"""
+String-2 > count_hi
+prev  |  next  |  chance
+Return the number of times that the string "hi" appears anywhere in the given string.
+
+
+count_hi('abc hi ho') → 1
+count_hi('ABChi hi') → 2
+count_hi('hihi') → 2
+Hint:
+Use the "for i in range(len(str)-1):" loop to look at each index in the string, except the last. For each i, extract the string starting at i and up to but not including i+2. Check if that string is 'hi', and count how many times that happens.
+"""
