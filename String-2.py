@@ -98,3 +98,14 @@ OK
 All Correct
 Good job -- problem solved. You can see our solution as an alternative. 
 """
+
+"""
+String-2 > cat_dog
+prev  |  next  |  chance
+Return True if the string "cat" and "dog" appear the same number of times in the given string.
+
+
+cat_dog('catdog') → True
+cat_dog('catcat') → False
+cat_dog('1cat1cadodog') → True
+"""
