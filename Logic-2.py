@@ -19,3 +19,9 @@ make_bricks(3, 2, 10) → True
 """
 
 # TÁ MUITO DIFÍCIL... :( 
+
+# Da amiga Giovanna
+def make_bricks(small, big, goal):
+ big_needed = min(big, goal // 5)
+ return goal - (big_needed * 5) <= small
+
