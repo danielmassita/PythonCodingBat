@@ -90,3 +90,45 @@ lone_sum(1, 2, 3) → 6
 lone_sum(3, 2, 3) → 2
 lone_sum(3, 3, 3) → 0
 """
+# Da amiga Gio...
+def lone_sum(a, b, c):
+ sum = 0
+ if a not in [b, c]:
+  sum += a
+ if b not in [a, c]:
+  sum += b
+ if c not in [a, b]:
+  sum += c
+ return sum
+
+# Our Solution:
+
+def lone_sum(a, b, c):
+  sum = 0
+  if a != b and a != c: sum += a
+  if b != a and b != c: sum += b
+  if c != a and c != b: sum += c 
+  return sum
+ 
+"""
+Expected	Run		
+lone_sum(1, 2, 3) → 6	6	OK	
+lone_sum(3, 2, 3) → 2	2	OK	
+lone_sum(3, 3, 3) → 0	0	OK	
+lone_sum(9, 2, 2) → 9	9	OK	
+lone_sum(2, 2, 9) → 9	9	OK	
+lone_sum(2, 9, 2) → 9	9	OK	
+lone_sum(2, 9, 3) → 14	14	OK	
+lone_sum(4, 2, 3) → 9	9	OK	
+lone_sum(1, 3, 1) → 3	3	OK	
+other tests
+OK	
+
+All Correct
+"""
+
+
+
+
+
+
