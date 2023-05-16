@@ -259,3 +259,54 @@ OK
 
 All Correct
 """
+
+
+"""
+List-2 > has22
+prev  |  next  |  chance
+Given an array of ints, return True if the array contains a 2 next to a 2 somewhere.
+
+
+has22([1, 2, 2]) → True
+has22([1, 2, 1, 2]) → False
+has22([2, 1, 2]) → False
+"""
+# Da amiga Vesper...
+def has22(nums):
+  for i in range(len(nums) - 1):
+      if nums[i] == 2 and nums[i + 1] == 2:
+          return True
+  return False
+
+# Da amiga Gio...
+def has22(nums):
+  has2 = False
+  for i in range(len(nums)):
+    if has2 and nums[i]==2:
+      return True
+    elif nums[i]==2:
+      has2 = True
+    else:
+      has2 = False
+  return False
+"""
+Expected	Run		
+has22([1, 2, 2]) → True	True	OK	
+has22([1, 2, 1, 2]) → False	False	OK	
+has22([2, 1, 2]) → False	False	OK	
+has22([2, 2, 1, 2]) → True	True	OK	
+has22([1, 3, 2]) → False	False	OK	
+has22([1, 3, 2, 2]) → True	True	OK	
+has22([2, 3, 2, 2]) → True	True	OK	
+has22([4, 2, 4, 2, 2, 5]) → True	True	OK	
+has22([1, 2]) → False	False	OK	
+has22([2, 2]) → True	True	OK	
+has22([2]) → False	False	OK	
+has22([]) → False	False	OK	
+has22([3, 3, 2, 2]) → True	True	OK	
+has22([5, 2, 5, 2]) → False	False	OK	
+other tests
+OK	
+
+All Correct
+"""
