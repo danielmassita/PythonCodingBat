@@ -346,3 +346,79 @@ OK
 
 All Correct
 """
+
+
+
+"""
+Logic-2 > make_chocolate
+prev  |  next  |  chance
+We want make a package of goal kilos of chocolate. We have small bars (1 kilo each) and big bars (5 kilos each). Return the number of small bars to use, assuming we always use big bars before small bars. Return -1 if it can't be done.
+
+
+make_chocolate(4, 1, 9) → 4
+make_chocolate(4, 1, 10) → -1
+make_chocolate(4, 1, 7) → 2
+"""
+# Da amiga Gio...
+def make_chocolate(small, big, goal):
+  if goal >= (5*big):
+    remainder = goal - (5*big)
+  else:
+    remainder = goal % 5
+    
+  if remainder <= small:
+    return remainder
+  return -1
+ 
+# Da amiga Vesper...
+def make_chocolate(small, big, goal):
+  # Calcula a quantidade máxima de barras grandes que podem ser usadas
+  max_big_bars = goal // 5
+
+  # Verifica se a quantidade máxima de barras grandes é maior que as disponíveis
+  if max_big_bars > big:
+      # Calcula a quantidade de barras grandes que serão usadas
+      big_bars_used = big
+  else:
+      # Calcula a quantidade de barras grandes que serão usadas
+      big_bars_used = max_big_bars
+
+  # Calcula a quantidade de kilos restantes após utilizar as barras grandes
+  remaining_goal = goal - (big_bars_used * 5)
+
+  # Verifica se a quantidade de kilos restantes pode ser completada com as barras pequenas
+  if remaining_goal <= small:
+      return remaining_goal
+  else:
+      return -1
+"""
+Expected	Run		
+make_chocolate(4, 1, 9) → 4	4	OK	
+make_chocolate(4, 1, 10) → -1	-1	OK	
+make_chocolate(4, 1, 7) → 2	2	OK	
+make_chocolate(6, 2, 7) → 2	2	OK	
+make_chocolate(4, 1, 5) → 0	0	OK	
+make_chocolate(4, 1, 4) → 4	4	OK	
+make_chocolate(5, 4, 9) → 4	4	OK	
+make_chocolate(9, 3, 18) → 3	3	OK	
+make_chocolate(3, 1, 9) → -1	-1	OK	
+make_chocolate(1, 2, 7) → -1	-1	OK	
+make_chocolate(1, 2, 6) → 1	1	OK	
+make_chocolate(1, 2, 5) → 0	0	OK	
+make_chocolate(6, 1, 10) → 5	5	OK	
+make_chocolate(6, 1, 11) → 6	6	OK	
+make_chocolate(6, 1, 12) → -1	-1	OK	
+make_chocolate(6, 1, 13) → -1	-1	OK	
+make_chocolate(6, 2, 10) → 0	0	OK	
+make_chocolate(6, 2, 11) → 1	1	OK	
+make_chocolate(6, 2, 12) → 2	2	OK	
+make_chocolate(60, 100, 550) → 50	50	OK	
+make_chocolate(1000, 1000000, 5000006) → 6	6	OK	
+make_chocolate(7, 1, 12) → 7	7	OK	
+make_chocolate(7, 1, 13) → -1	-1	OK	
+make_chocolate(7, 2, 13) → 3	3	OK	
+other tests
+OK	
+
+All Correct
+"""
